@@ -1,9 +1,11 @@
-C -Low Level Progemming focusing on
+"C" --Low Level Progemming focusing on
+
 	GCC
 	PRINTF
 	PUTS
 	PUTCHAR
 	USE OF BETTY LINTER
+	
 task 0) A script that run C file through the preprocessor and save the result in another file.
 
 task 1) A script that compiles a C file but does not link saving the the file in a variable $CFILE.
