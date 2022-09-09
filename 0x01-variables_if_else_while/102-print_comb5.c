@@ -19,7 +19,7 @@ int main(void)
 		{
 			for (t = tens; t <= '9'; t++)
 			{
-				for (o = ones + 1; o <= '9'; o++)
+				for (o = ones; o <= '9'; o++)
 				{
 					putchar(tens);
 					putchar(ones);
@@ -33,7 +33,7 @@ int main(void)
 						putchar(' ');
 					}
 				}
-				/*o = '0';*/
+				o = '0';
 			}
 		}
 	}
