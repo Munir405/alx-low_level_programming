@@ -8,25 +8,35 @@
 
 int main(void)
 {
-	int tens, ones;
+	int i, j;
+	int a, b, c, d;
 
-	for (tens = '0'; tens <= '9'; tens++)
+	for (i = 0; i < 100; i++)
 	{
-		for (ones = '0'; ones <= '9'; ones++)
+		a = i / 10;
+		b = i % 10;
+
+		for (j = 0; j < 100; j++)
 		{
-			if (!(tens <= ones))
+			c = j / 10;
+			d = j % 10;
+
+			if (a < c || (a == c && b < d))
 			{
-				putchar(tens);
-				putchar(ones);
-				if (!(tens == '8' && ones == '9'))
+				putchar(a + '0');
+				putchar(b + '0');
+				putchar(' ');
+				putchar(c + '0');
+				putchar(c + '0');
+
+				if (!(a == 9 && b == 8 && c == 9 && d == 9))
 				{
-					putchar(' ');
 					putchar(',');
+					putchar(' ');
 				}
 			}
 		}
 	}
-
 	putchar('\n');
 
 	return (0);
