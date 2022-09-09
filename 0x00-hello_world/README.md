@@ -19,3 +19,7 @@ task 4) A C-program that prints exactly "Programming is like building a multilin
 task 5) A C-program that prints exactly "with proper grammer, but the outcome is a piece of art,, \n" using printf function.
 
 task 6) A C-program that prints the size of various types on the computer it is compiled and run on. 
+
+advance task 100) A script that genrates assemble codes from the C code using intel syntax(normal format is att format) and save result to a file.
+
+advance task 101) A C program that print "and that piece of art is useful" - Dora Korpar, 2015-10-19,\n" using C functions other than printf and puts.
