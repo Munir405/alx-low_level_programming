@@ -8,32 +8,32 @@
 
 int main(void)
 {
-	int tens;
-	int ones;
-	int t;
-	int o;
+	int i, j;
+	int a, b, c, d;
 
-	for (tens = '0'; tens <= '9'; tens++)
+	for (i = 0; i < 100; i++)
 	{
-		for (ones = '0'; ones <= '9'; ones++)
-		{
-			for (t = '0'; t <= '9'; t++)
-			{
-				for (o = ones + 1; o <= '9'; o++)
-				{
-					putchar(tens);
-					putchar(ones);
-					putchar(' ');
-					putchar(t);
-					putchar(o);
+		a = i / 10;
+		b = i % 10;
 
-					if (!((tens == '9' && ones == '8') && (t == '9' && o == '9')))
-					{
-						putchar(',');
-						putchar(' ');
-					}
+		for (j = 0; j < 100; j++)
+		{
+			c = j / 10;
+			d = j % 10;
+
+			if (a < c || (a == c && b < d))
+			{
+				putchar(a + '0');
+				putchar(b + '0');
+				putchar(' ');
+				putchar(c + '0');
+				putchar(d + '0');
+
+				if (!(a == 9 && b == 8 && c == 9 && d == 9))
+				{
+					putchar(',');
+					putchar(' ');
 				}
-				o = '0';
 			}
 		}
 	}
