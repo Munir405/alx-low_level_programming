@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * times _table - print multiplication table starting with zero
+ * times_table - print multiplication table starting with zero
  * Description: Function to print times table
  */
 
