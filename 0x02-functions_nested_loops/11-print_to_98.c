@@ -1,9 +1,8 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
- * print_to_98 - print number from n to 98
- * Description: A function to prints numbers till 98
+ * print_to_98 - print number from n to ninty-eight
+ * Description: A function to prints numbers till ninty-eight
  * @n: integer argument
  */
 
@@ -20,7 +19,7 @@ void print_to_98(int n)
 			n--;
 		}
 	}
-	else if (n < 98)
+	else if (n <= 98)
 	{
 		while (n <= 98)
 		{
@@ -31,5 +30,5 @@ void print_to_98(int n)
 			n++;
 		}
 	}
-	_putchar('\n');
+	putchar('\n');
 }
