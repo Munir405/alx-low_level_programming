@@ -4,3 +4,7 @@
 0) 0X00-Hello_world: contains the files and scripts fori basic C-programs focusing on GCC, Printf, Puts, write and use of Betty-styles
 
 1) 0x01-variables_if_else_while: contains files implimenting the if-else, while loop in C programming language.
+
+2) C-Functions and Nested Loops: with detail functions on fibonacci sequences
+
+3) Debugging: Fixing multiple codes checking out the errors
