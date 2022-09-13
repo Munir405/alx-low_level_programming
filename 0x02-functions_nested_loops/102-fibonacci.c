@@ -14,7 +14,7 @@ int main(void)
 
 	for (counter = 1; counter <= (upperlimit / 2); counter++)
 	{
-		printf("%li %li ", num1, num2);
+		printf("%li, %li ", num1, num2);
 		num1 += num2;
 		num2 += num1;
 	}
