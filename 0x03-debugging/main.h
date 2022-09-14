@@ -1,3 +1,8 @@
+#ifndef _MAIN_
+#define _MAIN_
+
+#include <stdio.h>
+
 /**
  * positive_or_negative - checks if an integer is positive,negative or zero
  * @i: integer argument
@@ -33,3 +38,5 @@ int convert_day(int month, int day);
  */
 
 void print_remaining_days(int month, int day, int year);
+
+#endif /* _MAIN_ */
