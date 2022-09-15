@@ -5,6 +5,8 @@
 
 1) 0x01-variables_if_else_while: contains files implimenting the if-else, while loop in C programming language.
 
-2) C-Functions and Nested Loops: with detail functions on fibonacci sequences
+2) 0x02-C-Functions and Nested Loops: with detail functions on fibonacci sequences
 
-3) Debugging: Fixing multiple codes checking out the errors
+3) 0x03-Debugging: Fixing multiple codes checking out the errors
+
+4) 0x04-More functions, more nested loops
