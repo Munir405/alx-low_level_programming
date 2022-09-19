@@ -14,12 +14,11 @@ void print_rev(char *s)
 	while (*s != '\0')
 	{
 		len++;
-		/* to add null character prepend the length by one */
 		s++;
 	}
 
 	/* print string reversed starting from the end */
-	for (i = len; i >= 0; i--)
+	for (i = len; i > 0; i--)
 	{
 		_putchar(*s);
 		s--;
