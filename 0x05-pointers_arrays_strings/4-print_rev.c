@@ -15,7 +15,7 @@ void print_rev(char *s)
 	{
 		len++;
 		/* to add null character prepend the length by one */
-		++s;
+		s++;
 	}
 
 	/* print string reversed starting from the end */
