@@ -14,11 +14,14 @@ void print_rev(char *s)
 	while (*s != '\0')
 	{
 		len++;
-		s++;
+		++s;
 	}
 
+	/* find character second to null */
+	s--;
+
 	/* print string reversed starting from the end */
-	for (i = (len - 1); i >= 0; i--)
+	for (i = len; i > 0; i--)
 	{
 		_putchar(*s);
 		s--;
