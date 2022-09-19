@@ -10,3 +10,5 @@
 3) 0x03-Debugging: Fixing multiple codes checking out the errors
 
 4) 0x04-More functions, more nested loops
+
+5) 0x05-Pointer, arrays and strings: contains C code with implimentation of c pointer uses, array and strings
