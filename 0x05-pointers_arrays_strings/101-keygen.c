@@ -54,3 +54,17 @@ void randomPasswordGen(int N)
 		}
 	}
 }
+
+/**
+ * main - generates random password
+ * Return: zero
+ */
+
+int main(void)
+{
+	int N = 10;
+
+	randomPasswordGen(N);
+
+	return (0);
+}
