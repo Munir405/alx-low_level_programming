@@ -10,7 +10,7 @@
  * Return: void
  */
 
-void randomPasswordGen(int n)
+void randomPasswordGen(int N)
 {
 	int i = 0;
 
@@ -22,11 +22,11 @@ void randomPasswordGen(int n)
 	char letters[] = "abcdefghijklmnopqrstuvxyz";
 	char upperLetters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char symbols[] = "!@#$^*?";
-	char password[n];
+	char password[N];
 
 	randomizer = rand() % 4;
 
-	for (i = 0; i i < n; i++)
+	for (i = 0; i < N; i++)
 	{
 		if (randomizer == 1)
 		{
