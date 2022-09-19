@@ -7,7 +7,7 @@
 
 void print_rev(char *s)
 {
-	int len = 1;
+	int len = 0;
 	int i;
 
 	/* find length of string and point to the last character */
@@ -18,10 +18,10 @@ void print_rev(char *s)
 	}
 
 	/* print string reversed starting from the end */
-	for (i = len; i > 0; i--)
+	for (i = len; i >= 0; i--)
 	{
 		_putchar(*s);
-		--s;
+		s--;
 	}
 
 	_putchar('\n');
