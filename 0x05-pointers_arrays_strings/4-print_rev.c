@@ -7,7 +7,7 @@
 
 void print_rev(char *s)
 {
-	int len = 0;
+	int len = 1;
 	int i;
 
 	/* find length of string and point to the last character */
