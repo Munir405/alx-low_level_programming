@@ -14,3 +14,5 @@
 5) 0x05-Pointer, arrays and strings: contains C code with implimentation of c pointer uses, array and strings
 
 6) 0x06-More pointers, strings and arrays: with forming of standard library functions
+
+7) 0x07-Even more pointer, strings and arrays: with pointer to pointer
