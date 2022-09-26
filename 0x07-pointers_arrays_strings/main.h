@@ -44,7 +44,7 @@ char *_strchr(char *s, char c);
  * Return: number of bytes consecutively matched
  */
 
-unsigned *_strspn(char *s, char *accept);
+unsigned int _strspn(char *s, char *accept);
 
 /**
  * _strpbrk - return pointer to byte in s that matches a byte in accepted target
