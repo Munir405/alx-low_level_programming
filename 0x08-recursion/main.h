@@ -61,7 +61,7 @@ int _sqrt_recursion(int n);
  * Return: 1 if prime, 0 otherwise
  */
 
-is_prime_number(int n);
+int is_prime_number(int n);
 
 /**
  * is_palindrome - check if palindrome
