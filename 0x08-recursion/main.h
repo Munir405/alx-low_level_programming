@@ -45,7 +45,7 @@ int factorial(int n);
  * Return: power of numnber, -1 if less than 0
  */
 
-int _pow_recursion(int n);
+int _pow_recursion(int x, int y);
 
 /**
  * _sqrt_recursion -  natural square  of number
