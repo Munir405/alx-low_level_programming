@@ -18,3 +18,5 @@
 7) 0x07-Even more pointer, strings and arrays: with pointer to pointer
 
 8) 0x08- Recursion
+
+9) 0x09C- Static libraries: creating my own static libraries with all the functions i have written so far
