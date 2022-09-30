@@ -20,3 +20,5 @@
 8) 0x08- Recursion
 
 9) 0x09C- Static libraries: creating my own static libraries with all the functions i have written so far
+
+10) 0x0A-argc_argv: How to use arguments passed to your program and writing functions with command line arguments
