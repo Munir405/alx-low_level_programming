@@ -3,25 +3,26 @@
 #include <time.h>
 
 /**
- * main - generates random password
- * Return: zero
+ * main - generates random password to crack crackme file
+ * Return: zero(0) on success
  */
 
 int main(void)
 {
-	int myrand;
-	int count;
-	int total;
+	int i, j;
+	int upper_limit = 2772;
+	int ascii_limit = 128;
+	time_t t;
 
-	srand(time(NULL));
-
-	for (count = 0, total = 2772; total > 122; count++)
+	srand((unsigned int)time(&t));
+	
+	for (j = 0, i = 0; j < upper_limit; j += i)
 	{
-		myrand = (rand() % 125) + 1;
-		printf("%c", myrand);
-		total -= myrand;
+		i = rand() % ascii_limit;
+		if ((j + i) > upper_limit)
+			break;
+		printf("%c", i);
 	}
-	printf("%c", total);
-
+	printf("%c\n", (upper_limit - j));
 	return (0);
 }
