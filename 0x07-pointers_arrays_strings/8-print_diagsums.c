@@ -11,18 +11,16 @@ void print_diagsums(int *a, int size)
 {
 	int diagsum_1 = 0;
 	int diagsum_2 = 0;
-	int row, i;
+	int i, j;
 
-	for (row = 0; row < size; row++)
+	for (i = 0; i < (size * size); i += (size + 1))
 	{
-		i = (row * size) + row;
 		diagsum_1 += a[i];
 	}
 
-	for (row = 1; row <= size; row++)
+	for (j = (size - 1); j < ((size * size) - 1); j += (size - 1))
 	{
-		i = (row * size) - row;
-		diagsum_2 += a[i];
+		diagsum_2 += a[j];
 	}
 
 	printf("%d, %d\n", diagsum_1, diagsum_2);
