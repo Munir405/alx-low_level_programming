@@ -33,7 +33,7 @@ char *str_concat(char *s1, char *s2)
 		*(concat + i) = *(s1 + i);
 	/* copy second string */
 	for (j = 0; j < len2; j++, i++)
-		*(concate + i) = *(s2 + j);
+		*(concat + i) = *(s2 + j);
 
 	return (concat);
 }
