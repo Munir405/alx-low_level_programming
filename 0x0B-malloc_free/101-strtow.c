@@ -2,76 +2,77 @@
 #include <stdlib.h>
 
 /**
- * count_word - helper function to count the number of words in a string
- * @s: string to evaluate
- *
+ * if_word - count number of words in sting
+ * @s: string
  * Return: number of words
  */
-int count_word(char *s)
+
+int if_word(char *str)
 {
-	int flag, c, w;
+	int i, word_len = 0, flag = 0;
 
-	flag = 0;
-	w = 0;
-
-	for (c = 0; s[c] != '\0'; c++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (s[c] == ' ')
+		if (str[i] == ' ')
 			flag = 0;
 		else if (flag == 0)
 		{
 			flag = 1;
-			w++;
+			word_len++;
 		}
 	}
-
-	return (w);
+	return (word_len);
 }
+
 /**
- * **strtow - splits a string into words
+ * **strtow - split a string into words
  * @str: string to split
- *
- * Return: pointer to an array of strings (Success)
- * or NULL (Error)
+ * Return: pointer to array (success) or NULL (error)
  */
+
 char **strtow(char *str)
 {
-	char **matrix, *tmp;
-	int i, k = 0, len = 0, words, c = 0, start, end;
+	int total_words, i, j, length;
+	char **words, *found_word;
 
-	while (*(str + len))
-		len++;
-	words = count_word(str);
-	if (words == 0)
+	if (str == 0 || *str == 0)
 		return (NULL);
 
-	matrix = (char **) malloc(sizeof(char *) * (words + 1));
-	if (matrix == NULL)
+	/* get total length of words */
+	total_words = if_word(str);
+	if (total_words == 0)
 		return (NULL);
+	/* add null byte */
+	total_words += 1;
 
-	for (i = 0; i <= len; i++)
+	words = malloc(total_words * sizeof(char *));
+	if (words == NULL)
+		return (NULL);
+	/* iterate through string */
+	for (i = 0; *str != '\0' && i < total_words; str++)
 	{
-		if (str[i] == ' ' || str[i] == '\0')
+		/* if space, countinue count */
+		if (*str == ' ')
+			;
+		else
 		{
-			if (c)
-			{
-				end = i;
-				tmp = (char *) malloc(sizeof(char) * (c + 1));
-				if (tmp == NULL)
-					return (NULL);
-				while (start < end)
-					*tmp++ = str[start++];
-				*tmp = '\0';
-				matrix[k] = tmp - c;
-				k++;
-				c = 0;
-			}
+			/* temporal pointer to point to beginning of found word */
+			found_word = str;
+
+			/* length of found word */
+			for (length = 0; *str != ' ' && *str != '\0'; length++, str++);
+			/* create space for found word */
+			words[i] = malloc((length + 1) * sizeof(char));
+			if (words[i] == NULL)
+				return (NULL);
+			/* fill space with found word */
+			for (j = 0; *found_word != ' ' && *found_word != '\0'; j++, found_word++)
+				words[i][j] = *found_word;
+			/* add null byte to word */
+			words[i][j] = '\0';
+			/* increment pointer for next word */
+			i++;
 		}
-		else if (c++ == 0)
-			start = i;
 	}
-
-	matrix[k] = NULL;
-
-	return (matrix);
+	return (words);
 }
