@@ -23,4 +23,6 @@
 
 10) 0x0A-argc_argv: How to use arguments passed to your program and writing functions with command line arguments
 
-11) 0x0B-malloc, free: Dynamic memory allocation
+11) 0x0B-Malloc, free: Dynamic memory allocation
+
+12) 0x0C-More malloc, free, realloc and calloc functions for DMA
