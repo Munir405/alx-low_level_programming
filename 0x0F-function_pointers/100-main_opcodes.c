@@ -3,7 +3,7 @@
 
 /**
 *main -  program that prints the opcodes of its own main function.
-*@argc: argument count 
+*@argc: argument count
 *@argv: argument vector
 *Return: on success, 1 or 2 in case of failure
 */
