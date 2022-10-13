@@ -1,0 +1,9 @@
+$ltrace ./crackme2
+$export jennieandjayloveasm=hey (can equate it to any word)
+$ltrace ./crackme2
+$printf "hey" | md5sum | cut -d' ' -f1
+
+#check for md5 hash of compared string using https://md5.gromweb.com
+#that should generate the original password
+
+$export jennieandjayloveasm="password from site"
