@@ -33,3 +33,5 @@
 14) 0x0E-Structures and typedef
 
 15) 0x0F- Function_pointers
+
+16) 0x10- Variadic functions
