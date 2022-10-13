@@ -38,14 +38,3 @@ A function that prints anything followed by a new line.
 	f : float
 	s : char * (if string is NULL, (nil) is printed instead.)
 	any other char is ignored.
-
-100-hello_holberton.asm
-
-	A 64-bit program in assembly that prints Hello, Holberton, followed by a new line.
-
-	Using syscall
-	compiled using nasm and gcc
-
-variadic_functions.h
-
-	Header file containing function prototypes, include guarded.
