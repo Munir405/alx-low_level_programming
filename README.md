@@ -35,3 +35,5 @@
 15) 0x0F- Function_pointers
 
 16) 0x10- Variadic functions
+
+17) 0x12- Data Structure: Singly linked lists
