@@ -37,3 +37,5 @@
 16) 0x10- Variadic functions
 
 17) 0x12- Data Structure: Singly linked lists
+
+18) 0x13- More on Singly linked lists
