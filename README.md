@@ -39,3 +39,5 @@
 17) 0x12- Data Structure: Singly linked lists
 
 18) 0x13- More on Singly linked lists
+
+19) 0x14- Bit Manipulation
