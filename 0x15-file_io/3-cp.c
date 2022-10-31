@@ -1,50 +1,67 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
- * main - copy file to another
- * @ac: argument count
- * @av: argument vector
- * Return: 0
+ * error_handler - handles errors for cp
+ * @exit_code: exit code
+ * @message: error message
+ * @type: data type for format
  */
 
-int main(int ac, char *av[])
+void error_handler(int exit_code, char *message, char type, ...)
 {
-	int file1, file2, size;
-	char buff[1024];
+	va_list args;
 
-	if (ac != 3)
+	va_start(args, type);
+	if (type == 's')
+		dprintf(STDERR_FILENO, message, va_arg(args, char *));
+	else if (type == 'd')
+		dprintf(STDERR_FILENO, message, va_arg(args, int));
+	else if (type == 'N')
+		dprintf(STDERR_FILENO, message, "");
+	else
+		dprintf(STDERR_FILENO, "Error: Does not match any type\n");
+	va_end(args);
+	exit(exit_code);
+}
+
+/**
+ * main - copies the content of a file to another file
+ * @argc: number of arguments
+ * @argv: array of arguments
+ * Return:  0 (Always)
+ */
+
+int main(int argc, char *argv[])
+{
+	char buffer[1024];
+	int fd_s, fd_d;
+	ssize_t bytes_read, bytes_written;
+
+	if (argc != 3)
+		error_handler(97, "Usage: cp file_from file_to\n", 'N');
+
+	fd_s = open(argv[1], O_RDONLY);
+	if (fd_s == -1)
+		error_handler(98, "Error: Can't read from file %s\n", 's', argv[1]);
+
+	fd_d = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (fd_d == -1)
+		error_handler(99, "Error: Can't write to %s\n", 's', argv[2]);
+
+	while ((bytes_read = read(fd_s, buffer, 1024)) > 0)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
+		bytes_written = write(fd_d, buffer, bytes_read);
+		if (bytes_written == -1)
+			error_handler(99, "Error: Can't write to %s\n", 's', argv[2]);
 	}
-	file1 = open(av[1], O_RDONLY, 0);
-	if (file1 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
-	file2 = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-	if (file2 == 1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
-	}
-	while ((size = read(file1, buff, 1024)) > 0)
-	{
-		if (write(file2, buff, size) != size)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
-		}
-		if (size == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-			exit(98);
-		}
-		if (close(file1) != 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file1), exit(100);
-		}
-		if (close(file2) != 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file2), exit(100);
-		}
-		return (0);
+
+	if (bytes_read == -1)
+		error_handler(98, "Error: Can't read from file %s\n", 's', argv[1]);
+	if (close(fd_s) == -1)
+		error_handler(100, "Error: Can't close fd %d\n", 'd', fd_s);
+	if (close(fd_d) == -1)
+		error_handler(100, "Error: Can't close fd %d\n", 'd', fd_d);
+
+	return (0);
 }
