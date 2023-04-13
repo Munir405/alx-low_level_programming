@@ -2,6 +2,8 @@
 
 /**
  * linear_search - search linearly
+ * Description: linear search
+ * @i++: increamental
  * @array: given array of ints
  * @size: size of array
  * @value: value to search for
@@ -15,16 +17,6 @@ int linear_search(int *array, size_t size, int value)
 	if (!array)
 		return (-1);
 
-/**
- * i = 0;
- *	while (i < size)
- *	{
- *		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
- *		if (array[i] == value)
- *			return (i);
- *		i++;
- *	}
- */
 	for (i = 0; i < size; i++)
 	{
 		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
