@@ -3,18 +3,18 @@
 /**
  * print_arr - helper func to print array everytime array is halved
  * @array: array
- * @l: left index of original array
- * @r: right index of original array
+ * @a: left index of original array
+ * @b: right index of original array
  */
 
-void print_arr(int *array, size_t l, size_t r)
+void print_arr(int *array, size_t a, size_t b)
 {
 	size_t i = 0;
 
 	printf("Searching in array: ");
-	for (i = l; i <= r; i++)
+	for (i = a; i <= b; i++)
 	{
-		if (i != r)
+		if (i != b)
 			printf("%d, ", array[i]);
 		else
 			printf("%d\n", array[i]);
@@ -31,23 +31,23 @@ void print_arr(int *array, size_t l, size_t r)
 
 int binary_search(int *array, size_t size, int value)
 {
-	size_t mid = 0;
-	size_t l = 0;
-	size_t r = size - 1;
+	size_t ctr = 0;
+	size_t a = 0;
+	size_t b = size - 1;
 
 	if (!array)
 		return (-1);
 
-	while (l <= r)
+	while (a <= b)
 	{
-		print_arr(array, l, r);
-		mid = (l + r) / 2;
-		if (array[mid] == value)
-			return (mid);
+		print_arr(array, a, b);
+		mid = (a + b) / 2;
+		if (array[ctr] == value)
+			return (ctr);
 		else if (array[mid] > value)
-			r = mid - 1;
+			b = ctr - 1;
 		else
-			l = mid + 1;
+			a = ctr + 1;
 	}
 	return (-1);
 }
